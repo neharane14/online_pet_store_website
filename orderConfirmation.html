@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Confirmation</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: url('images/cart1.jpg') no-repeat center center fixed;
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 350px;
+        }
+        h2 {
+            text-align: center;
+        }
+        .info {
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+        .order-details {
+            background: #f4f4f4;
+            padding: 10px;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Order Confirmation</h2>
+
+    <div class="order-details">
+        <p class="info"><b>Pet Name:</b> <span id="petName"></span></p>
+        <p class="info"><b>Price:</b> $<span id="price"></span></p>
+        <p class="info"><b>Quantity:</b> <span id="quantity"></span></p>
+        <p class="info"><b>Total Price:</b> $<span id="totalPrice"></span></p>
+        <p class="info"><b>Customer Name:</b> <span id="customerName"></span></p>
+        <p class="info"><b>Mobile Number:</b> <span id="mobileNumber"></span></p>
+        <p class="info"><b>Address:</b> <span id="address"></span></p>
+        <p class="info"><b>Payment Method:</b> <span id="paymentMethod"></span></p>
+        <p class="info"><b>Order Date:</b> <span id="orderDate"></span></p>
+        <p class="info"><b>Pickup Date:</b> <span id="pickupDate"></span></p>
+    </div>
+</div>
+
+<script>
+    // Retrieve order details from URL parameters
+    const params = new URLSearchParams(window.location.search);
+    document.getElementById("petName").textContent = params.get("name") || "N/A";
+    document.getElementById("price").textContent = params.get("price") || "0.00";
+    document.getElementById("quantity").textContent = params.get("quantity") || "1";
+    document.getElementById("totalPrice").textContent = (parseFloat(params.get("price") || 0) * parseInt(params.get("quantity") || 1)).toFixed(2);
+    document.getElementById("customerName").textContent = params.get("customer_name") || "N/A";
+    document.getElementById("mobileNumber").textContent = params.get("mobile_number") || "N/A";
+    document.getElementById("address").textContent = params.get("address") || "N/A";
+    document.getElementById("paymentMethod").textContent = params.get("payment_method") || "N/A";
+
+    // Get today's date as order date
+    let today = new Date();
+    let orderDate = today.toISOString().split('T')[0]; // YYYY-MM-DD format
+    document.getElementById("orderDate").textContent = orderDate;
+
+    // Set pickup date (3 days after order date)
+    let pickupDate = new Date();
+    pickupDate.setDate(today.getDate() + 3);
+    document.getElementById("pickupDate").textContent = pickupDate.toISOString().split('T')[0]; // YYYY-MM-DD format
+</script>
+
+</body>
+</html>

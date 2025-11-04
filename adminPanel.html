@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="adminPanel.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="dashboard">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <h2>Admin Dashboard</h2>
+            <nav>
+                <ul>
+                    <li><a href="#" id="managePets"><i class="fas fa-paw"></i> Manage Pets</a></li>
+                    <li><a href="#" id="manageUsers"><i class="fas fa-users"></i> Manage Users</a></li>
+                    <li><a href="#" id="manageOrders"><i class="fas fa-shopping-cart"></i> Manage Orders</a></li>
+                    <li><a href="#" id="contactus"><i class="fas fa-comments"></i> Feedback</a></li>
+                    <li><a href="logout.php"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="content">
+            <header>
+                <h1>Welcome Admin!!</h1>
+               
+            </header>
+
+            <!-- Dynamic Section -->
+            <section id="dynamicContent">
+                <p>Select an option from the sidebar to get started.</p>
+            </section>
+        </main>
+    </div>
+
+    <script src="adminPanel.js"></script>
+    <script src="managePets.js"></script>
+    <script src="manageUsers.js"></script>
+    <script src="manageOrders.js"></script>
+    <script src="manageFeedback.js"></script>
+
+</body>
+</html>

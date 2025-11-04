@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pet Store</title>
+    <link rel="stylesheet" href="pet.css">
+</head>
+<body>
+
+    <!--Header section starts-->
+    <header>
+        <h1>Welcome to Our Pet Store</h1>
+        <nav class="navbar">
+            <img src="images/mainLogo.jpeg" class="logo"> 
+            <ul>
+                <li><a href="home.php"><b>Home</b></a></li>
+                <li><a href="aboutUs.html"><b>About Us</b></a></a></li>
+                <li><a href="contactus.html"><b>Contact Us</b></a></li>
+                <li><a href="pet.html"><b>Pet</b></a></li>
+                <li><a href="Service Provider.html"><b>Service Provider</b></a></li>
+                <li><a href="admin.html"><b>Admin</b></a></li>
+
+                <div class="icon-row">
+                    <a href="login.html" title="Login">
+                      <img src="images/user.png" alt="Login" class="icon">
+                    </a>
+                    <a href="cart.php" title="Cart">
+                        <img src="images/cart.png" alt="" class="icon">
+                        <span class="cart-counter">0</span>
+                    </a>
+                </div>
+
+            </ul>
+        </nav>
+    </header>
+    <!--Header section ends-->
+
+
+    <main>  
+        <h2>Featured Pets</h2>
+        <div class="pet-gallery" id="petGallery">
+            <div class="pet" id="pet1">
+                <a href="dogGallery.php">
+                <img src="images/dog3.jpeg" alt="Clickable Image" class="pet"></a>
+                <h3>Dog</h3>
+            </div>
+            <div class="pet" id="pet2">
+                <a href="catGallery.php">
+                <img src="images/cat1.jpg" alt="Clickable Image" class="pet"></a>
+                <h3>Cat</h3>
+            </div>
+        </div>
+    </main>
+
+
+    <!--footer section starts-->
+    <footer>
+        <p>&copy; 2024 Glamorous Pet Store. All rights reserved.</p>
+    </footer>
+    <!--footer section ends-->
+
+    <script src="pet.js"></script>
+   
+
+</body>
+</html>

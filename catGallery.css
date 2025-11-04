@@ -1,0 +1,265 @@
+*{
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    outline: none; border: none;
+    text-decoration: none;
+    text-transform: capitalize;
+    transition: .2s linear;
+    
+}
+
+header {
+    background-color: #ff8c00;
+    color: black;
+    text-align: center;
+    padding: 3rem 0;
+    background-image: url(images/finalBack1.jpg);
+    padding: 10px 0;
+    width: 100%;
+    text-align: center;
+}
+
+h1 {
+    color: white;
+}
+.logo {
+    width: 100px;
+    cursor: pointer;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav a {
+    color: black;
+    text-decoration: none;
+}
+
+/* Container for the icons */
+.icon-row {
+    display: flex; /* Arrange items in a row */
+    align-items: center; /* Vertically align icons */
+    gap: 16px; /* Space between icons */
+    float: right;
+    right: 280px; /* Left hand side icons*/
+    position: relative;
+}
+
+/* Styling for the icons */
+.icon-row .icon {
+    width: 28px; /* Set icon width */
+    height: 28px; /* Set icon height */
+    cursor: pointer; /* Show pointer on hover */
+    margin-left: .5rem;
+}
+
+/* Optional: Add hover effect */
+.icon-row a:hover img {
+    transform: scale(1.1); /* Slightly enlarge icon on hover */
+    transition: transform 0.2s ease; /* Smooth animation */
+}
+
+.cart-counter {
+    position: absolute;
+    top: -8px;
+    right: 10px;
+    background-color: #b31010;
+    color: #fff;
+    font-size: 12px;
+    font-weight: bold;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: none; /* Initially hidden */
+}
+
+footer {
+    background-color: #ff8c00;
+    color: white;
+    text-align: center;
+    padding: 1em 0;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+
+h2 {
+    color: black;
+}
+
+.pet-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr)); /* Responsive grid */
+    gap: 1.8rem; /* Space between cards */
+    width: 100%;
+    padding: 20px;
+    align-items: center;
+}
+
+.pet-card {
+    padding: 2rem;
+    text-align: center;
+    border: 2px solid #4caf50;
+    width: 100%;
+    height: 100%;
+    background: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    transition: 0.3s ease-in-out;
+}
+
+.pet-card:hover {
+    background: #fff;
+}
+
+.pet-card img {
+    height: 10rem;
+    border-radius: 8px;
+}
+
+.pet-card h2 {
+    font-size: 1rem;
+    padding: 1rem 0;
+    color: black;
+}
+
+.pet-card p {
+    font-size: 1rem;
+    padding: .1rem 0;
+}
+
+/* Button Styling */
+button {
+    padding: 10px 15px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+    margin: 5px;
+}
+
+.add-to-cart {
+    background-color: #28a745;
+    color: white;
+}
+
+.buy-now {
+    background-color: #ff5722;
+    color: white;
+}
+
+button:hover {
+    opacity: 0.8;
+}
+.icon-row {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.search-form {
+    display: flex;
+    align-items: center;
+    background: white;
+    border-radius: 12px;
+    padding: 5px;
+    border: 1px solid #ccc;
+}
+
+.search-form input {
+    border: none;
+    outline: none;
+    padding: 5px;
+    font-size: 8px;
+}
+
+.search-form button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.username-link {
+    color: red !important; /* Makes username red */
+    font-weight: bold; /* Bold for emphasis */
+    text-decoration: none; /* Removes underline */
+}
+
+.username-link:hover {
+    color: darkred !important; /* Darker red on hover */
+}
+
+.cart-container {
+    position: relative;
+    display: inline-block;
+}
+
+.cart-counter {
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    background: red;
+    color: white;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 4px 7px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 18px;
+    min-height: 18px;
+}
+
+/* Dropdown Styling */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    background-color: white;
+    min-width: 150px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    list-style: none;
+    padding: 5px 0;
+    border-radius: 5px;
+    top: 100%;
+    left: 0;
+}
+
+.dropdown-menu li {
+    padding: 8px 15px;
+}
+
+.dropdown-menu li a {
+    text-decoration: none;
+    color: black;
+    display: block;
+}
+
+.dropdown-menu li a:hover {
+    background-color: #f1f1f1;
+}
+
+.username {
+    font-weight: bold;
+    color: red !important;
+}

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="registration.css">
+    <title>Login & Registration Form</title>
+    <script>
+        function validateForm(event) {
+            event.preventDefault(); // Prevent form submission
+
+            let username = document.getElementById("unm").value.trim();
+            let email = document.getElementById("em").value.trim();
+            let mobile = document.getElementById("pn").value.trim();
+            let password = document.getElementById("pass").value.trim();
+            let valid = true;
+
+            // Username validation (only letters)
+            if (!/^[a-zA-Z]+$/.test(username)) {
+                document.getElementById("unm-error").innerText = "Username should contain only letters.";
+                valid = false;
+            } else {
+                document.getElementById("unm-error").innerText = "";
+            }
+
+            // Email validation (must contain @)
+            if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+                document.getElementById("em-error").innerText = "Invalid email format.";
+                valid = false;
+            } else {
+                document.getElementById("em-error").innerText = "";
+            }
+
+            // Mobile number validation (exactly 10 digits)
+            if (!/^\d{10}$/.test(mobile)) {
+                document.getElementById("pn-error").innerText = "Mobile number must be exactly 10 digits.";
+                valid = false;
+            } else {
+                document.getElementById("pn-error").innerText = "";
+            }
+
+            // Password validation (exactly 10 characters)
+            if (password.length !== 6) {
+                document.getElementById("pass-error").innerText = "Password must be exactly 6 characters long.";
+                valid = false;
+            } else {
+                document.getElementById("pass-error").innerText = "";
+            }
+
+            // Submit the form if all fields are valid
+            if (valid) {
+                document.getElementById("registerForm").submit();
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="wrapper">
+        <form id="registerForm" action="registration.php" method="POST" onsubmit="validateForm(event)">
+            <h1>Create an Account</h1>
+
+            <div class="input-box">
+                <input type="text" id="unm" name="unm" placeholder="Username" required>
+                <p id="unm-error" class="error" style="color: red;"></p>
+            </div>
+
+            <div class="input-box">
+                <input type="email" id="em" name="em" placeholder="Email" required>
+                <p id="em-error" class="error" style="color: red;"></p>
+            </div>
+
+            <div class="input-box">
+                <input type="text" id="pn" name="pn" placeholder="Mobile Number" required>
+                <p id="pn-error" class="error" style="color: red;"></p>
+            </div>
+
+            <div class="input-box">
+                <input type="password" id="pass" name="pass" placeholder="Password" required>
+                <p id="pass-error" class="error" style="color: red;"></p>
+            </div>
+
+            <button type="submit" class="btn">Register</button>
+
+            <div class="register-link">
+                <p>Already have an account? <a href="login.html">Login</a></p>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

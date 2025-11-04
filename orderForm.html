@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Form</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Link to your CSS file -->
+    <header>
+        <h1>Complete Your Order</h1>
+    </header>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f8f8;
+    color: #333;
+    background: url(images/cart1.jpg);
+    background-size: cover;
+        }
+        header {
+    background-color: #ff8c00;
+    color: black;
+    text-align: center;
+    padding: 3rem 0;
+    background-image: url(images/finalBack1.jpg);
+    padding: 10px 0;
+    width: 100%;
+    text-align: center;
+}
+        .container {
+            background: white;
+    padding: 20px;
+    width: 80%;
+    margin: 40px auto;
+    box-shadow: 0px 0px 10px #ccc;
+    border-radius: 8px;
+    max-width: 400px;
+    max-height: 500px;
+        }
+        h2 {
+            text-align: center;
+        }
+        label {
+            font-weight: bold;
+            display: block;
+            margin-top: 10px;
+        }
+        input, select {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .order-btn {
+            width: 100%;
+            background: green;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            margin-top: 15px;
+            cursor: pointer;
+        }
+        footer {
+    background-color: #ff8c00;
+    color: white;
+    text-align: center;
+    padding: 1em 0;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}    
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Order Form</h2>
+
+    <form action="orderConfirmation.php" method="post">
+        <label>Customer Name:</label>
+        <input type="text" name="customer_name" required>
+
+        <label>Mobile Number:</label>
+        <input type="tel" name="mobile_number" required>
+
+        <label>Address:</label>
+        <input type="text" name="address" required>
+
+        <label>Payment Method:</label>
+        <select name="payment_method" required>
+        
+            <option value="cash_on_delivery">Cash on Delivery</option>
+        </select>
+
+        <button type="submit" class="order-btn">Place Order</button>
+    </form>
+</div>
+
+<!-- Footer -->
+<footer>
+    <p>&copy; 2024 Glamorous Pet Store. All rights reserved.</p>
+</footer>
+</body>
+</html>
